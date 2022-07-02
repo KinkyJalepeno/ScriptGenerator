@@ -12,7 +12,7 @@ public class Main {
 
         Scanner sc = new Scanner(System.in);
 
-        // The below are for the service interface and media binding
+
         while (true) {
             int serviceInterface;
             int portGroupName;
