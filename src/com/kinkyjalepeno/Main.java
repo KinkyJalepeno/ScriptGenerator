@@ -31,9 +31,9 @@ public class Main {
             String adjacencyName;
             int accountPort;
 
-            System.out.println("***************************************************");
-            System.out.println("**************NuWave Script Generator**************");
-            System.out.println("***********Created by Dave G - June 2022***********");
+            System.out.println("***************SIP Binding / Media pool / Adjacency***************");
+            System.out.println("*************************Script Generator*************************");
+            System.out.println("********************Created by Dave G - June 2022*****************");
             System.out.println("\b\b");
             System.out.println("Please answer the questions below regarding the \b");
             System.out.println("variables required to generate the scripts.");
