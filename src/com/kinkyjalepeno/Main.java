@@ -1,14 +1,12 @@
 package com.kinkyjalepeno;
 
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
 
 
-    public static void main(String[] args) throws IOException, InterruptedException {
-        new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+    public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
@@ -17,6 +15,7 @@ public class Main {
             int serviceInterface;
             int portGroupName;
             int subnetPrefixLength;
+            int customerPrefixLength;
             int vlanId;
 
             String gatewayIpAddress;
@@ -84,10 +83,13 @@ public class Main {
             System.out.print("What is the IP of the customer end: ");
             customerIPAddress = sc.next();
 
+            System.out.println("What is the prefix length for the customer IP: ");
+            customerPrefixLength = sc.nextInt();
+
             // Time to send all data to the file writing class
 
             WriteTheFile write = new WriteTheFile(serviceInterface, portGroupName, subnetPrefixLength, gatewayIpAddress, signallingAddress, mediaAddress, serviceAddress,
-                    vlanId, realm, adjacencyName, accountPort, customerIPAddress);
+                    vlanId, realm, adjacencyName, accountPort, customerIPAddress, customerPrefixLength);
 
             write.writeScript();
 

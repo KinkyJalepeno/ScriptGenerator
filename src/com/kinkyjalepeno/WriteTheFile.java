@@ -21,10 +21,11 @@ class WriteTheFile {
     private String realm;
     private String adjacencyName;
     private int accountPort;
+    private int customerPrefixLength;
 
 
     public WriteTheFile(int serviceInterface, int portGroupName, int subnetPrefixLength, String gatewayIpAddress, String signallingAddress,
-                        String mediaAddress, String serviceAddress, int vlanId, String realm, String adjacencyName, int accountPort, String customerIPAddress) {
+                        String mediaAddress, String serviceAddress, int vlanId, String realm, String adjacencyName, int accountPort, String customerIPAddress, int customerPrefixLength) {
 
 
         this.serviceInterface = serviceInterface;
@@ -39,6 +40,7 @@ class WriteTheFile {
         this.adjacencyName = adjacencyName;
         this.accountPort = accountPort;
         this.customerIPAddress = customerIPAddress;
+        this.customerPrefixLength = customerPrefixLength;
 
 
     }
@@ -51,10 +53,7 @@ class WriteTheFile {
 
         String scriptTitle = sc.nextLine();
 
-        String userHomeFolder = System.getProperty("user.home") + "/Desktop";
-
-
-        File file = new File(userHomeFolder, scriptTitle + ".txt");
+        File file = new File(scriptTitle + ".txt");
 
 
         try (BufferedWriter br = new BufferedWriter(new FileWriter(file))) {
@@ -111,7 +110,7 @@ class WriteTheFile {
             br.write("realm " + realm + "\n");
             br.write("service-address " + serviceAddress + "\n");
             br.write("signaling-local-port 5060" + "\n");
-            br.write("remote-address-range ipv4 " + customerIPAddress + " prefix-len " + subnetPrefixLength + "\n");
+            br.write("remote-address-range ipv4 " + customerIPAddress + " prefix-len " + customerPrefixLength + "\n");
             br.write("signaling-peer " + customerIPAddress + "\n");
             br.write("dynamic-routing-domain-match " + customerIPAddress + "\n");
             br.write("signaling-peer-port 5060" + "\n");
@@ -122,11 +121,12 @@ class WriteTheFile {
 
             System.out.println("THE FILL HAS BEEN WRITTEN\n\n\n");
 
+
         } catch (IOException e) {
-            System.err.print("Unable to write file " + file.toString());
+            System.err.print("\nUnable to write file " + file.toString());
         }
 
-    }
 
+    }
 
 }
