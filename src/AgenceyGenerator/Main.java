@@ -1,4 +1,4 @@
-package com.kinkyjalepeno;
+package AgenceyGenerator;
 
 
 import java.util.Scanner;
@@ -83,7 +83,7 @@ public class Main {
             System.out.print("What is the IP of the customer end: ");
             customerIPAddress = sc.next();
 
-            System.out.println("What is the prefix length for the customer IP: ");
+            System.out.print("What is the prefix length for the customer IP: ");
             customerPrefixLength = sc.nextInt();
 
             // Time to send all data to the file writing class

@@ -1,4 +1,4 @@
-package com.kinkyjalepeno;
+package AgenceyGenerator;
 
 
 import java.io.BufferedWriter;
@@ -9,19 +9,19 @@ import java.util.Scanner;
 
 class WriteTheFile {
 
-    private int serviceInterface;
-    private int portGroupName;
-    private int subnetPrefixLength;
-    private String gatewayIpAddress;
-    private String signallingAddress;
-    private String mediaAddress;
-    private String serviceAddress;
-    private String customerIPAddress;
-    private int vlanId;
-    private String realm;
-    private String adjacencyName;
-    private int accountPort;
-    private int customerPrefixLength;
+    private final int serviceInterface;
+    private final int portGroupName;
+    private final int subnetPrefixLength;
+    private final String gatewayIpAddress;
+    private final String signallingAddress;
+    private final String mediaAddress;
+    private final String serviceAddress;
+    private final String customerIPAddress;
+    private final int vlanId;
+    private final String realm;
+    private final String adjacencyName;
+    private final int accountPort;
+    private final int customerPrefixLength;
 
 
     public WriteTheFile(int serviceInterface, int portGroupName, int subnetPrefixLength, String gatewayIpAddress, String signallingAddress,
@@ -123,7 +123,7 @@ class WriteTheFile {
 
 
         } catch (IOException e) {
-            System.err.print("\nUnable to write file " + file.toString());
+            System.err.print("\nUnable to write file " + file);
         }
 
 
